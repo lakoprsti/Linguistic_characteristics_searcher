@@ -175,8 +175,8 @@ class TestFindOtherPhonemes(TestCase):
         expected = ["s", "z", "f", "v"]
         language = "en"
         comm_feat = {'nasal': 0, 'dorsal': 0, 'tense': None, 'sg': 0, 'high': None, 'cont': 1, 'syll': 0,
-                    'phrngl': 0, 'lat': 0, 'delrel': 0, 'son': 0, 'back': None, 'atr': None, 'low': None, 'cg': 0,
-                    'strid': 1, 'cons': 1}
+                     'phrngl': 0, 'lat': 0, 'delrel': 0, 'son': 0, 'back': None, 'atr': None, 'low': None, 'cg': 0,
+                     'strid': 1, 'cons': 1}
         table = functions.get_languages(language)
         result = functions.find_other_phonemes(comm_feat, table)
         self.assertEqual(expected, result)
@@ -185,8 +185,8 @@ class TestFindOtherPhonemes(TestCase):
         expected = ["s", "z"]
         language = "en"
         comm_feat = {'son': 0, 'cg': 0, 'nasal': 0, 'lat': 0, 'high': None, 'back': None, 'atr': None, 'dorsal': 0,
-                    'syll': 0, 'lab': 0, 'low': None, 'strid': 1, 'round': None, 'tense': None, 'coronal': 1,
-                    'ant': 1,'phrngl': 0, 'delrel': 0, 'dist': 0, 'cons': 1, 'sg': 0, 'cont': 1}
+                     'syll': 0, 'lab': 0, 'low': None, 'strid': 1, 'round': None, 'tense': None, 'coronal': 1,
+                     'ant': 1,'phrngl': 0, 'delrel': 0, 'dist': 0, 'cons': 1, 'sg': 0, 'cont': 1}
         table = functions.get_languages(language)
         result = functions.find_other_phonemes(comm_feat, table)
         self.assertEqual(expected, result)
@@ -224,8 +224,8 @@ class TestFindOtherPhonemes(TestCase):
     def test_find_other_phonemes_error_1(self):
         language = "en"
         comm_feat = [{'cons': 1, 'son': 0, 'syll': 0, 'lab': 0, 'round': None, 'coronal': 1, 'ant': 1, 'dist': 0,
-                     'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
-                     'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
+                      'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
+                      'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
         table = functions.get_languages(language)
         with self.assertRaises(TypeError):
             functions.find_other_phonemes(comm_feat, table)
@@ -243,12 +243,12 @@ class TestSmallestCommon(TestCase):
 
     def test_smallest_common(self):
         all_expected = [{'dorsal': 0, 'strid': 1}, {'strid': 1, 'cont': 1}, {'cont': True, 'strid': True},
-                       {'delrel': False, 'strid': True}, {'strid': True, 'dorsal': False},
-                       {'strid': True, 'delrel': False}]
+                        {'delrel': False, 'strid': True}, {'strid': True, 'dorsal': False},
+                        {'strid': True, 'delrel': False}]
         language = "en"
         comm_feat = {'nasal': 0, 'dorsal': 0, 'tense': None, 'sg': 0, 'high': None, 'cont': 1, 'syll': 0,
-                    'phrngl': 0, 'lat': 0, 'delrel': 0, 'son': 0, 'back': None, 'atr': None, 'low': None, 'cg': 0,
-                    'strid': 1, 'cons': 1}
+                     'phrngl': 0, 'lat': 0, 'delrel': 0, 'son': 0, 'back': None, 'atr': None, 'low': None, 'cg': 0,
+                     'strid': 1, 'cons': 1}
         phonemes_group = ["s", "z", "f", "v"]
         table = functions.get_languages(language)
         result = functions.smallest_common(comm_feat, phonemes_group, table)
@@ -272,8 +272,8 @@ class TestSmallestCommon(TestCase):
     def test_smallest_common_error_1(self):
         language = "en"
         comm_feat = [{'cons': 1, 'son': 0, 'syll': 0, 'lab': 0, 'round': None, 'coronal': 1, 'ant': 1, 'dist': 0,
-                     'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
-                     'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
+                      'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
+                      'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
         phoneme_group = ["s"]
         table = functions.get_languages(language)
         with self.assertRaises(TypeError):
@@ -282,8 +282,8 @@ class TestSmallestCommon(TestCase):
     def test_smallest_common_error_2(self):
         language = "en"
         comm_feat = [{'cons': 1, 'son': 0, 'syll': 0, 'lab': 0, 'round': None, 'coronal': 1, 'ant': 1, 'dist': 0,
-                     'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
-                     'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
+                      'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
+                      'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
         phoneme_group = "s"
         table = functions.get_languages(language)
         with self.assertRaises(TypeError):
@@ -291,8 +291,8 @@ class TestSmallestCommon(TestCase):
 
     def test_smallest_common_error_3(self):
         comm_feat = [{'cons': 1, 'son': 0, 'syll': 0, 'lab': 0, 'round': None, 'coronal': 1, 'ant': 1, 'dist': 0,
-                     'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
-                     'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
+                      'dorsal': 0, 'high': None, 'low': None, 'back': None, 'tense': None, 'phrngl': 0, 'atr': None,
+                      'voice': 0, 'sg': 0, 'cg': 0, 'cont': 1, 'strid': 1, 'lat': 0, 'delrel': 0, 'nasal': 0}]
         phoneme_group = ["s"]
         table = []
         with self.assertRaises(TypeError):
@@ -303,11 +303,11 @@ class TestComparePhonemes(TestCase):
 
     def test_compare_phonemes_features(self):
         all_expected = [({'dorsal': False, 'strid': True}, ['s', 'z', 'f', 'v']),
-                    ({'strid': True, 'cont': True}, ['s', 'z', 'f', 'v']),
-                    ({'cont': True, 'strid': True}, ['s', 'z', 'f', 'v']),
-                    ({'delrel': False, 'strid': True}, ['s', 'z', 'f', 'v']),
-                    ({'strid': True, 'dorsal': False}, ['s', 'z', 'f', 'v']),
-                    ({'strid': True, 'delrel': False}, ['s', 'z', 'f', 'v'])]
+                        ({'strid': True, 'cont': True}, ['s', 'z', 'f', 'v']),
+                        ({'cont': True, 'strid': True}, ['s', 'z', 'f', 'v']),
+                        ({'delrel': False, 'strid': True}, ['s', 'z', 'f', 'v']),
+                        ({'strid': True, 'dorsal': False}, ['s', 'z', 'f', 'v']),
+                        ({'strid': True, 'delrel': False}, ['s', 'z', 'f', 'v'])]
         language = "en"
         result = functions.compare_phonemes(language, "s", "z", "f", "v")
         in_list = False
@@ -318,11 +318,11 @@ class TestComparePhonemes(TestCase):
 
     def test_compare_phonemes_features_less(self):
         all_expected = [({'dorsal': False, 'strid': True}, ['s', 'z', 'f', 'v']),
-                    ({'strid': True, 'cont': True}, ['s', 'z', 'f', 'v']),
-                    ({'cont': True, 'strid': True}, ['s', 'z', 'f', 'v']),
-                    ({'delrel': False, 'strid': True}, ['s', 'z', 'f', 'v']),
-                    ({'strid': True, 'dorsal': False}, ['s', 'z', 'f', 'v']),
-                    ({'strid': True, 'delrel': False}, ['s', 'z', 'f', 'v'])]
+                        ({'strid': True, 'cont': True}, ['s', 'z', 'f', 'v']),
+                        ({'cont': True, 'strid': True}, ['s', 'z', 'f', 'v']),
+                        ({'delrel': False, 'strid': True}, ['s', 'z', 'f', 'v']),
+                        ({'strid': True, 'dorsal': False}, ['s', 'z', 'f', 'v']),
+                        ({'strid': True, 'delrel': False}, ['s', 'z', 'f', 'v'])]
         language = "en"
         result = functions.compare_phonemes(language, "s", "z", "f")
         in_list = False
