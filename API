@@ -1,0 +1,21 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/<language>")
+def get_language(language):
+    print(language)
+    if language == 'en':
+        return 'English is prodominently spoken in England, America, Australia.'
+    elif language == 'hu':
+        return 'Hungarian is prodominently spoken in Hungary.'
+    elif language == 'es':
+        return 'Spanish is prodominently spoken in Spain and South America.'
+    else:
+        return {}
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000, debug=True)
+
+
