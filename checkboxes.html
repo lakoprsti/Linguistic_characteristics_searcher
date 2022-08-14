@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="checkboxes.css">
+    <meta charset="UTF-8">
+    <title>Phoneme Feature Chart Searcher</title>
+</head>
+<body>
+<!-- from here -->
+<div id="selector">
+    <section id="checkboxes">
+        <h2>Select phonemes:</h2>
+        <form id="phonselectform", method="POST", action = "/">
+            <div class="phonemes">
+                <h3>Vowels</h3>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="i2">
+                        <span>i</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="u5">
+                        <span>y</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="i4">
+                        <span>ɪ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="i3">
+                        <span>ʏ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="i1">
+                        <span>ɨ</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="u4">
+                        <span>ʉ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="u3">
+                        <span>ʊ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="u1">
+                        <span>ɯ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="u2">
+                        <span>u</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e2">
+                        <span>e</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e4">
+                        <span>ø</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e5">
+                        <span>ɛ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e6">
+                        <span>œ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check"  value="o5">
+                        <span>ɘ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e7">
+                        <span>ɜ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e1">
+                        <span>ə</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e6">
+                        <span>ɵ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="e3">
+                        <span>ɞ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="o4">
+                        <span>ɤ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="o3">
+                        <span>o</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="o1">
+                        <span>ʌ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="o2">
+                        <span>ɔ</span>
+                    </label>
+                </p>  
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="a5">
+                        <span>æ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="a4">
+                        <span>a</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="a3">
+                        <span>ɶ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="a2">
+                        <span>ɑ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="a1">
+                        <span>ɒ</span>
+                    </label>
+                </p>
+            </div>
+            <div class="phonemes">
+                <h3>Consonants</h3>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="t">
+                        <span>t</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="d">
+                        <span>d</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="s">
+                        <span>s</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="z">
+                        <span>z</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="l2">
+                        <span>ɬ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="lzh">
+                        <span>ɮ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="thvl">
+                        <span>θ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="thv">
+                        <span>ð</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="sh">
+                        <span>ʃ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="zh">
+                        <span>ʒ</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="ty">
+                        <span>c</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="gy">
+                        <span>ɟ</span>
+                    </label>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="ty2">
+                        <span>ç</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="gy2">
+                        <span>ʝ</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="p">
+                        <span>p</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="b">
+                        <span>b</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="f">
+                        <span>f</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="v">
+                        <span>v</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="f2">
+                        <span>ɸ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="f3">
+                        <span>β</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="k">
+                        <span>k</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="g">
+                        <span>ɡ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="kh">
+                        <span>x</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="kh2">
+                        <span>ɣ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="q">
+                        <span>q</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="">
+                        <span>ɢ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="kh3">
+                        <span>χ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="r2">
+                        <span>ʁ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="h2">
+                        <span>ħ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="gl1">
+                        <span>ʕ</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="h">
+                        <span>h</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="h4">
+                        <span>ɦ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="gl2">
+                        <span>ʔ</span>
+                    </label>                    
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="tsh">
+                        <span>ʧ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="dzh">
+                        <span>ʤ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="ts">
+                        <span>ʦ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="dz">
+                        <span>ʣ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="kkh">
+                        <span>kx</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="pf">
+                        <span>pf</span>
+                    </label>
+                </p>
+                <p> 
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="m">
+                        <span>m</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="n">
+                        <span>n</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="n2">
+                        <span>ŋ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="n3">
+                        <span>ɳ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="n4">
+                        <span>ɲ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="n5">
+                        <span>ɴ</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="l">
+                        <span>l</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="l3">
+                        <span>ʎ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="r">
+                        <span>r</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="r3">
+                        <span>ɹ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="r4">
+                        <span>ʀ</span>
+                    </label>
+                </p>
+                <p>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="j">
+                        <span>j</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="2">
+                        <span>w</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="w2">
+                        <span>ɥ</span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="phon_check" value="w3">
+                        <span>ɰ</span>
+                    </label>
+                </p>
+            </div>
+            <input type="submit"
+        </form>
+    </section>
+    <section id="sel_phon">
+        <p>
+            The selected phonemes are: {{selected_phonemes}}
+        </p>
+        <p>
+            Their common features in {{language}} are: {{common_features}}
+        </p>
+    </section>
+    <!-- to here -->
+</body>
+</html>
