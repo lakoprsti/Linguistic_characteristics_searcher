@@ -121,7 +121,9 @@ def compare_phonemes(language, *phonemes):
                 for i in range(len(all_features)):
                     common = dict(common.items() & all_features[i].items())
         except ValueError or IndexError:
-            print("Invalid input. Please try again.")
+            smallest_common_features = "One of the specified phonemes does not exist in the specified language." \
+                                       "Please try again."
+            return smallest_common_features
     common = {key: value for key, value in common.items() if value is not None}
     all_phonemes = find_other_phonemes(common, table)
     smallest_common_10 = smallest_common(common, all_phonemes, table)
