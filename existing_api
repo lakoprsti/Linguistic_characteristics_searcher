@@ -1,0 +1,20 @@
+import requests
+import json
+
+url = "https://restcountries.com/#api-endpoints-v3-language"
+response = requests.get(url)
+print(response)
+
+countries_call = "https://restcountries.com/v3.1/lang/hungarian"
+response = requests.get(countries_call)
+hungary = response.json()
+
+countries_call = "https://restcountries.com/v3.1/lang/spanish"
+response = requests.get(countries_call)
+spanish = response.json()
+
+countries_call = "https://restcountries.com/v3.1/lang/english"
+response = requests.get(countries_call)
+english = response.json()
+
+print(json.dumps(spanish, sort_keys=False, indent=4))
