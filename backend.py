@@ -18,6 +18,28 @@ def connect_to_db(phonlang):
     return cnx
 
 
+# def get_languages(language):
+#     try:
+#         db_name = 'phonlang'
+#         db_connection = connect_to_db(db_name)
+#         cur = db_connection.cursor(dictionary=True)
+#         print(f"Connected to {db_name}")
+
+#         query = f"""SELECT ph.primary_key, ph.phoneme, ph.cons, ph.son, ph.syll, ph.lab, ph.round, ph.coronal, ph.ant,
+#                 ph.dist, ph.dorsal, ph.high, ph.low, ph.back, ph.tense, ph.phrngl, ph.atr, ph.voice, ph.sg, ph.cg,
+#                 ph.cont, ph.strid, ph.lat, ph.delrel, ph.nasal
+#         FROM phonemechart ph
+#         JOIN langphons lp
+#         ON ph.primary_key = lp.phoneme
+#         JOIN languages lan
+#         ON lp.language = lan.primary_key
+#         WHERE lan.primary_key = "{language}";"""
+#         cur.execute(query)
+#         result = cur.fetchall()
+#         print(result)
+#         cur.close()
+#         return result
+
 def get_languages(language):
     try:
         db_name = 'phonlang'
@@ -46,6 +68,10 @@ def get_languages(language):
     except Exception:
         raise ConnectionError("Failed to read data from DB")
 
+    # finally:
+    #     if db_connection:
+    #         db_connection.close()
+    #         print("Db connection closed.")
 
 
 # phoneme comparison by Juli
@@ -99,7 +125,7 @@ def compare_phonemes(language, *phonemes):
             features = [phoneme for phoneme in table if phonemes_list[0] == phoneme["primary_key"]]
         except KeyError or IndexError:
             all_phonemes = phonemes_list
-            smallest_common_features = "One of the specified phonemes does not exist in the specified language. " \
+            smallest_common_features = "One of the specified phonemes does not exist in the specified language." \
                                        "Please try again."
             return smallest_common_features, all_phonemes
         common = dict(features[0].items())
@@ -121,7 +147,7 @@ def compare_phonemes(language, *phonemes):
                             return smallest_common_features, all_phonemes
             if len(all_features) < len(phonemes_list):
                 all_phonemes = phonemes_list
-                smallest_common_features = "One of the specified phonemes does not exist in the specified language. " \
+                smallest_common_features = "One of the specified phonemes does not exist in the specified language." \
                                            "Please try again."
                 return smallest_common_features, all_phonemes
             common = dict(all_features[0].items() & all_features[1].items())
@@ -131,12 +157,12 @@ def compare_phonemes(language, *phonemes):
                         common = dict(common.items() & all_features[i].items())
                     except KeyError or IndexError:
                         all_phonemes = phonemes_list
-                        smallest_common_features = "One of the specified phonemes does not exist in the specified language. " \
+                        smallest_common_features = "One of the specified phonemes does not exist in the specified language." \
                                                    "Please try again."
                         return smallest_common_features, all_phonemes
         except ValueError or IndexError:
             all_phonemes = phonemes_list
-            smallest_common_features = "One of the specified phonemes does not exist in the specified language. " \
+            smallest_common_features = "One of the specified phonemes does not exist in the specified language." \
                                        "Please try again."
             return smallest_common_features, all_phonemes
     common = {key: value for key, value in common.items() if value is not None}
