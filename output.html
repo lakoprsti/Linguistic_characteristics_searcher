@@ -1,0 +1,17 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} Phonemes chart - disautomatized {% endblock %}</h1>
+<section id="sel_phon">
+    <p>
+        The selected phonemes are: {{selected_phonemes}}
+    </p>
+    <p>
+        Their common features in {{language}} are: {{common_features}}
+    </p>
+    <img src="{{kitty}}">
+</section>
+
+{%endblock content%}
